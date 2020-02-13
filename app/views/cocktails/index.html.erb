@@ -3,8 +3,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">HOME</a>
-
+    <%= link_to "HOME", root_path, class: "navbar-brand" %>
   </div>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add</button>
 
@@ -13,14 +12,20 @@
 <div class="container" id="top_card">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail) do %>
-      <div class="card-trip">
+      <!-- <div class="cards">
         <%= image_tag "https://source.unsplash.com/1600x900/?cocktail-#{cocktail.name}", alt: "alttext", class: "img" %>
-        <div class="card-trip-infos">
+        <div class="card-category">
           <div>
             <h2><%= cocktail.name %> </h2>
           </div>
         </div>
+      </div> -->
+    <div class="cards">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?cocktail-<%@cocktail.name%>")>
+        <h2><%= cocktail.name %> </h2>
       </div>
+    </div>
+
     <% end %>
   <% end %>
 </div>
