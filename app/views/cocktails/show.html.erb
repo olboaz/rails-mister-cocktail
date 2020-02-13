@@ -1,3 +1,7 @@
+<nav class="navbar navbar-dark bg-dark">
+
+</nav>
+
 <div class="container">
   <ul class="list-group">
     <h1><%= @cocktail.name %></h1>
@@ -5,7 +9,7 @@
       <li class="list-group-item"><%= dose.ingredient.name %></li>
       <li class="list-group-item"><%= dose.description %></li>
 
-       <%= link_to "Remove",
+       <%= link_to "Delete",
                   dose_path(dose),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
