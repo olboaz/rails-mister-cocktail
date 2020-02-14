@@ -13,10 +13,11 @@
   <div class="form-container">
     <h1>Add Your Famous Cocktail</h1>
     <%= simple_form_for @cocktail do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, :label => "Cocktail name :"%>
+    <%= f.input :photo, as: :file, :label => "Import Your Photo :"%>
     <%= f.submit class: "btn btn-primary" %>
     <% end %>
-    <br>
+    <hr>
     <%= link_to "Back to List", cocktails_path, class: "btn btn-light btn-sm"%>
   </div>
 </div>

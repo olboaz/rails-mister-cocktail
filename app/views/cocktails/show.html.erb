@@ -6,15 +6,23 @@
     <i class="fas fa-glass-martini-alt"></i>
     <%= link_to " ENJOY COCKTAIL", root_path, class: "navbar-brand fas fa-glass-martini-alt" %>
   </div>
+  <%= link_to "Add an Other", new_cocktail_path, class: "btn btn-success mx-2 my-sm-0" %>
   <%= link_to "Delete", cocktail_path(@cocktail), method: :delete,
               data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
 </nav>
 
 <div class="container">
-  <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
-         url('https://source.unsplash.com/1600x900/?cocktail-<%=@cocktail.name%>')">
-    <h1><%= @cocktail.name %></h1>
+  <% if @cocktail.photo.attached?%>
+  <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('<%= cl_image_path @cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
+    <h1><%= @cocktail.name.capitalize %></h1>
   </div>
+  <% else %>
+  <div class="wrapper" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+    url('https://source.unsplash.com/1600x900/?cocktail-<%=@cocktail.name%>');">
+    <h1><%= @cocktail.name.capitalize %></h1>
+  </div>
+  <% end %>
   <div class="card-ingredients">
     <h4>List Ingredients</h4>
     <div class="card-infos">
@@ -29,5 +37,6 @@
     <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary"%>
   </div>
   <br>
+  <hr>
   <%= link_to "Back to List", cocktails_path, class: "btn btn-light btn-sm"%>
 </div>
