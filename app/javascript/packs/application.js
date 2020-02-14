@@ -16,10 +16,18 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 import 'bootstrap';
+
+
+import { initSelect2 } from '../components/init_select2';
 import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   // [...]
-  loadDynamicBannerText();
+  if (document.getElementById("banner-typed-text")) {
+    loadDynamicBannerText();
+  }
+  initSelect2();
 });
+
+

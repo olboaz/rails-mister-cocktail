@@ -12,7 +12,7 @@
   <h1>Add doses for <%= @cocktail.name %></h1>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description %>
-    <%= f.association :ingredient, collection: Ingredient.all.order(:name)%>
+    <%= f.association :ingredient, collection: Ingredient.all.order(:name), input_html: { class: "select2" } %>
     <%= f.submit "Add", class: "btn btn-primary" %>
     <%= link_to "Cancel", cocktail_path(@cocktail), class: "btn btn-danger" %>
   <% end %>
