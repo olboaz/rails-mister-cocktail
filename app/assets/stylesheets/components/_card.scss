@@ -42,7 +42,8 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 250px;
+  width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,12 +53,50 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
   object-fit: cover;
 }
+
+.trash{
+  position: absolute;
+  top: 10px;
+  right:10px;
+}
+
+h2 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+.card-infos {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.card-ingredients{
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  color: #8CA2AE;
+}
+
+ul {
+  display: list-inline;
+}
+li{
+  display:list-item;
 }
 
 // Smallest device

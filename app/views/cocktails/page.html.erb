@@ -1,8 +1,9 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.thebostoncalendar.com/system/events/photos/000/153/661/large/22459230_1668921443132461_8482670789952276408_o.jpg?1508919678);">
-  <div class="container">
-    <h1>The FUN Cocktails!</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+ url(https://images.unsplash.com/photo-1453825012366-3738046cb6c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80);">
+  <div class="container text-right">
+    <h1 id="title"><i class="fas fa-glass-martini-alt"></i> Enjoy Cocktails !</h1>
     <p>Change your life and drink a lot of Cocktails !</p>
-    <%= link_to "List of cocktails", cocktails_path, class: "btn btn-ghost" %>
-    <a class="btn btn-flat" href="#">Add Your Own cocktails</a>
+    <%= link_to "List Of Cocktails", cocktails_path, class: "btn btn-ghost" %>
+    <%= link_to "Add Your Cocktails", new_cocktail_path, class: "btn btn-success" %>
   </div>
 </div>

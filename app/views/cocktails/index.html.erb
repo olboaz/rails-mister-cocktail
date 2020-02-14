@@ -1,31 +1,24 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg" id="navbar_color">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <%= link_to "HOME", root_path, class: "navbar-brand" %>
+    <i class="fas fa-glass-martini-alt"></i>
+    <%= link_to " ENJOY COCKTAIL", root_path, class: "navbar-brand fas fa-glass-martini-alt" %>
   </div>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add</button>
-
+  <%= link_to "Add", new_cocktail_path, class: "btn btn-success my-2 my-sm-0" %>
 </nav>
 
-<div class="container" id="top_card">
-  <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail_path(cocktail) do %>
-      <!-- <div class="cards">
-        <%= image_tag "https://source.unsplash.com/1600x900/?cocktail-#{cocktail.name}", alt: "alttext", class: "img" %>
-        <div class="card-category">
-          <div>
-            <h2><%= cocktail.name %> </h2>
-          </div>
+<div class="container">
+  <h1 class="text-center text-secondary">All Fun Cocktails</h1>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+          url('https://source.unsplash.com/1600x900/?cocktail-<%=cocktail.name%>');">
+          <h2><%= cocktail.name.capitalize %> </h2>
         </div>
-      </div> -->
-    <div class="cards">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/1600x900/?cocktail-<%@cocktail.name%>")>
-        <h2><%= cocktail.name %> </h2>
-      </div>
-    </div>
-
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
