@@ -3,7 +3,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <i class="fas fa-glass-martini-alt"></i>
     <%= link_to " ENJOY COCKTAIL", root_path, class: "navbar-brand fas fa-glass-martini-alt" %>
   </div>
   <%= link_to "Back to List", cocktails_path, class: "btn btn-light"%>
@@ -31,10 +30,14 @@
         <% @cocktail.doses.each do |dose| %>
           <li><strong><%= dose.ingredient.name.capitalize %></strong> - <%= dose.description %> -
               <%= link_to "", dose_path(dose), method: :delete,
-              data: { confirm: "Are you sure?" }, class: "fas fa-trash" %></li>
+              data: { confirm: "Are you sure?" }, class: "fa fa-trash", style:"color:red" %></li>
         <% end %>
       </ul>
     </div>
     <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-secondary"%>
   </div>
 </div>
+
+<footer class="page-footer text-center gif">
+  <%= image_tag "gif_cocktail3.gif", size: "150x150"%>
+</footer>

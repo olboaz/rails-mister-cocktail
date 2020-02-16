@@ -3,10 +3,10 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <i class="fas fa-glass-martini-alt"></i>
     <%= link_to " ENJOY COCKTAIL", root_path, class: "navbar-brand fas fa-glass-martini-alt" %>
   </div>
-  <%= link_to "Add", new_cocktail_path, class: "btn btn-success my-2 my-sm-0" %>
+  <%= link_to "Back to List", cocktails_path, class: "btn btn-light"%>
+  <%= link_to "Add", new_cocktail_path, class: "btn btn-success mx-2 my-sm-0" %>
 </nav>
 
 <div class="container">
@@ -15,10 +15,13 @@
     <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name, :label => "Cocktail name :"%>
     <%= f.input :photo, as: :file, :label => "Import Your Photo :"%>
+    <hr>
     <%= f.submit class: "btn btn-primary" %>
     <% end %>
-    <hr>
-    <%= link_to "Back to List", cocktails_path, class: "btn btn-light btn-sm"%>
   </div>
 </div>
+
+<footer class="page-footer text-center">
+  <%= image_tag "gif_cocktail3.gif", size: "150x150"%>
+</footer>
 
